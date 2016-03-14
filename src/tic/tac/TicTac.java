@@ -1,17 +1,35 @@
 
 package tic.tac;
 
+import java.io.Reader;
+import java.util.Scanner;
+
 public class TicTac {
 
     public static void main(String[] args) {
-        Player player1 = new Player(1);
-        Player player2 = new Player(0);
+        Player player1 = new Player(0);
+        Player player2 = new Player(1);
         
-        Game game = new Game(100,100);
+        Game game = new Game(6,7);
         
-        System.out.println(game.CheckWhoWins(4, 4, player2));
-        System.out.println(game.CheckWhoWins(4, 5, player2));
-        System.out.println(game.CheckWhoWins(4, 3, player2));
+        Player current = player1;
+        boolean someoneWins = false;
+        while(!someoneWins){
+            Scanner reader = new Scanner(System.in);
+            System.out.println(current.getPlayerValue() + "Enter the row: ");
+            int row = reader.nextInt();
+            System.out.println(current.getPlayerValue() +"Enter the column: ");
+            int column = reader.nextInt();
+            
+            someoneWins = game.CheckWhoWins(row, column, current); 
+            
+            switch(current.getPlayerValue()){
+                case 0: current = player2; break;
+                case 1: current = player1; break;
+            }
+            
+        }
+        System.out.println(current.getPlayerValue() + "lose");
         
         
     }

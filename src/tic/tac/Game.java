@@ -16,36 +16,59 @@ public class Game {
     }
     
     
-    public boolean CheckWhoWins(int col,int row,Player player){
+    public boolean CheckWhoWins(int row,int col,Player player){
         this.gameBoard[row][col] = player.getPlayerValue();
         
         int x=player.getPlayerValue();
         
-            
+           try{
            if(this.gameBoard[row+1][col]==x){
                if(this.gameBoard[row+2][col]==x)return true;
            }
+           }catch(ArrayIndexOutOfBoundsException e){}
+
+           try{
            if(this.gameBoard[row-1][col]==x){
                if(this.gameBoard[row-2][col]==x)return true;
            }
+           }catch(ArrayIndexOutOfBoundsException e){}
+           
+           try{
            if(this.gameBoard[row][col+1]==x){
                if(this.gameBoard[row][col+2]==x)return true;
            }
+           }catch(ArrayIndexOutOfBoundsException e){}
+           
+           try{
            if(this.gameBoard[row][col-1]==x){
                if(this.gameBoard[row][col-2]==x)return true;
            }
+           }catch(ArrayIndexOutOfBoundsException e){}
+           
+           
+           try{
            if(this.gameBoard[row+1][col+1]==x){
                if(this.gameBoard[row+2][col+2]==x)return true;
            }
+           }catch(ArrayIndexOutOfBoundsException e){}
+           
+           try{
            if(this.gameBoard[row-1][col-1]==x){
                if(this.gameBoard[row-2][col-2]==x)return true;
            }
+           }catch(ArrayIndexOutOfBoundsException e){}
+           
+           try{
            if(this.gameBoard[row+1][col-1]==x){
                if(this.gameBoard[row+2][col-2]==x)return true;
            }
+           } catch(ArrayIndexOutOfBoundsException e){}
+           
+           try{
            if(this.gameBoard[row-1][col+1]==x){
                if(this.gameBoard[row-2][col+2]==x)return true;
            }
+           } catch(ArrayIndexOutOfBoundsException e){}
            
            return false;
 
