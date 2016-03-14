@@ -11,7 +11,7 @@ package tic.tac;
  */
 public class Game {
     public Player CheckWhoWins(int col,int row,Player player){
-        player.xOrObrv v r vr
+        player.xOrO
+                int x
         
     }
-}
