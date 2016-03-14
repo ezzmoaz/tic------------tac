@@ -3,9 +3,21 @@ package tic.tac;
 
 public class Game {
     
-    int gameBoard[][] = new int[6][7];  
+    private int gameBoard[][];  
+    
+    
+    public Game(int numberOfrows, int numberOfColumns){
+        this.gameBoard = new int[numberOfrows][numberOfColumns];
+        for(int i = 0; i < numberOfrows; i++){
+            for(int j = 0; j < numberOfColumns; j++){
+                this.gameBoard[i][j] = 3;
+            }
+        }
+    }
+    
     
     public boolean CheckWhoWins(int col,int row,Player player){
+        this.gameBoard[row][col] = player.getPlayerValue();
         
         int x=player.getPlayerValue();
         
@@ -36,15 +48,8 @@ public class Game {
            }
            
            return false;
-            
-            
-            
-            
 
-           
-          
-           
-        }
+    }
         
         
     }
