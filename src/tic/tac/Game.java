@@ -10,8 +10,4 @@ package tic.tac;
  * @author Ezzmoaz
  */
 public class Game {
-    public Player CheckWhoWins(int col,int row,Player player){
-        player.xOrO
-                int x
-        
-    }
+}
